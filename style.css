@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 
+  "... ...... ...... ...... ...... ...... ..." 10px
+  "... header header header header header ..." 50px
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secA   secA   secA   secA   secA   ..." 75vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secB   secB   secB   secB   secB   ..." 50vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secC   secC   secC   secC   secC   ..." 100vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secD   secD   secD   secD   secD   ..." 1fr
+  "... ...... ...... ...... ...... ...... ..." 
+  "... footer footer footer footer footer ..." 1fr
+  "... ...... ...... ...... ...... ...... ..."
+  /auto 1fr auto 1fr auto 1fr auto
+  ;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover{
+  color: gray;
+}
+li{
+  list-style: none; 
+}
+/* section conA */
+
+header{
+  grid-area: header;
+}
+.secA{
+  grid-area: secA;
+}
+.secB{
+  grid-area: secB;
+}
+.secC{
+  grid-area: secC;
+}
+.secD{
+  grid-area: secD;
+}
+footer{
+  grid-area: footer;
+}
+
+.headA{
+  display: flex;
+  justify-content: center;
+}
+li{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+  body{
+  grid-template: 
+  "... ...... ...... ...... ...... ...... ..." 10px
+  "... header header header header header ..." 50px
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secA   secA   secA   secA   secA   ..." 170vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secB   secB   secB   secB   secB   ..." 80vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secC   secC   secC   secC   secC   ..." 100vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secD   secD   secD   secD   secD   ..." 80vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... footer footer footer footer footer ..." 30vh
+  "... ...... ...... ...... ...... ...... ..."
+  /auto 1fr auto 1fr auto 1fr auto
+  ;
+ }
+ .secBtext h2{
+  font-size: 2.26rem;
+}
+.secBtext p{
+  font-size: 2.1rem;
+}
+}
+@media (min-width: 1000px) {
+  body{
+  grid-template: 
+  "... ...... ...... ...... ...... ...... ..." 10px
+  "... header header header header header ..." 50px
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secA   secA   secA   secA   secA   ..." 210vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secB   secB   secB   secB   secB   ..." 80vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secC   secC   secC   secC   secC   ..." 100vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... secD   secD   secD   secD   secD   ..." 100vh
+  "... ...... ...... ...... ...... ...... ..." 
+  "... footer footer footer footer footer ..." 30vh
+  "... ...... ...... ...... ...... ...... ..."
+  /auto 1fr auto 1fr auto 1fr auto
+  ;
+ }
+ .secBtext h2{
+  font-size: 500px;
+}
+.secBtext p{
+  font-size: 500px;
+}
+}
+
+/* トップ画面 secA */
+.secA{
+  position: relative;
+}
+video{
+  width: 100%;
+  overflow: hidden;
+}
+.secAtop{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#secAimg1{
+  width: 35%;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+.show1{
+  transition: 6s ;
+  opacity: 0;
+}
+.show1.show{
+  opacity: 1;
+}
+#secAimg2{
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+#secAimg3{
+  width: 45%;
+  margin-top: -7%;
+  margin-left: 13%;
+}
+
+/* 文字 secB */
+
+.secBtext{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 11s 3.5s;
+}
+.secBtext h2{
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 1.26rem;
+  text-shadow: 1px 2px 3px #808080;
+}
+.secBtext p{
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 1.1rem;
+  text-shadow: 1px 2px 3px #808080;
+}
+
+/* 店舗紹介 secC */
+.secC{
+  width: 100%;
+  height: 100px;
+}
+.secCtext{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.line{
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+.line::before{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  top: 27px;
+  left: -100px;
+}
+.line::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  top: 27px;
+  right: -100px;
+}
+.secC img:hover{
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+}
+
+.secCbox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.secC img{
+  width: 100%;
+}
+footer img{
+  width: 100%;
+}
